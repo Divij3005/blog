@@ -1,0 +1,80 @@
+.Box{
+    background-color: pink;
+    width: 100%;
+    height: 200px;
+    
+}
+
+.compose-button{
+    margin-left: 80%;
+    margin-top: 2%;
+    position: fixed;
+    background: rgba(252, 190, 231, 0.63);
+    width: 15%;
+    height: 10%;
+    border-radius: 40px;
+    color: rgb(135, 117, 136);
+    border-color: violet;
+}
+
+button:hover{
+    background: white;
+}
+
+.post{
+    width: 80%;
+    max-width: 700px;
+    margin: auto;
+    background: #f8f8f8;
+    border-radius: 20px;
+    border: rgba(94, 92, 92, 0.308) solid 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.post h1{
+    margin-left: 6%;
+    margin-bottom: 0%;
+    padding-top: 2%;
+    color: rgba(95, 176, 230, 0.822);
+}
+
+/* .upper-div{
+    margin-left: 7%;
+    margin-right: 7%;
+    padding-bottom: 0.6%;
+    border-bottom: rgba(122, 121, 121, 0.212) solid 0.8px;
+} */
+
+.date{
+    /* float: left; */
+    margin-left: 2%;
+}
+
+.topic{
+    /* float: right; */
+    margin-left: 2%;
+}
+
+.content{
+    margin-right: 6%;
+    margin-left: 6%;
+    /* max-height: 200px; */
+}
+
+.post button{
+    margin-left: 44%;
+    font-size: 1.2rem;
+    margin-bottom: 3%;
+    border: purple solid 2px;
+    border-radius: 20px;
+    padding: 1%;
+    background: pink;
+    color: purple;
+    height: 40px;
+    width: 100px;
+}
+
+.post button:hover{
+    background: white;
+}
