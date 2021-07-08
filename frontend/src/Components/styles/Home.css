@@ -9,7 +9,7 @@
     margin-left: 80%;
     margin-top: 2%;
     position: fixed;
-    background: rgba(252, 190, 231, 0.63);
+    background: pink;
     width: 15%;
     height: 10%;
     border-radius: 40px;
@@ -17,12 +17,25 @@
     border-color: violet;
 }
 
+.compose-button-compressed{
+    margin-left: 85%;
+    margin-top: 2%;
+    position: fixed;
+    background:pink;
+    width: 8%;
+    height: 6%;
+    border-radius: 50px;
+    color: rgb(135, 117, 136);
+    border-color: violet;
+    min-width: 50px;
+}
+
 button:hover{
     background: white;
 }
 
 .post{
-    width: 80%;
+    width: 60%;
     max-width: 700px;
     margin: auto;
     background: #f8f8f8;
@@ -63,18 +76,17 @@ button:hover{
 }
 
 .post button{
-    margin-left: 44%;
-    font-size: 1.2rem;
+    margin-left: 46%;
     margin-bottom: 3%;
     border: purple solid 2px;
     border-radius: 20px;
     padding: 1%;
-    background: pink;
+    background: rgba(182, 175, 177, 0.116);
     color: purple;
     height: 40px;
-    width: 100px;
+    width: 50px;
 }
 
 .post button:hover{
-    background: white;
+    background:  rgba(95, 176, 230, 0.479);
 }

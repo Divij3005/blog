@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import './styles/Header.css'
 import './styles/font-awesome/css/font-awesome.css'
 
@@ -48,12 +49,14 @@ class Header extends Component{
             }
             else if(link_val === header_ref[clicked]){
                 row.push(
-                    <li><a href="/" className="active">{link_val}</a></li>
+                    // eslint-disable-next-line
+                    <Link to={"/"}><li><a className="active">{link_val}</a></li></Link>
                 );
             }
             else
                 row.push(
-                    <li><a href="/">{link_val}</a></li>
+                    // eslint-disable-next-line
+                    <Link to={"/"}><li><a>{link_val}</a></li></Link>
                 );
         });
         let navVal;
