@@ -1,0 +1,72 @@
+.Box{
+    background-color: pink;
+    width: 100%;
+    height: 200px;  
+}
+
+#auth{
+    text-align: center;
+    font-size: 66px;
+    color: cornflowerblue;
+    padding-bottom:0;
+    margin-bottom: 20px;
+}
+
+#dt{
+    display: flex;
+    border-bottom: darkgray solid 2px;
+    margin-right: 2%;
+    margin-left: 2%;
+    font-size: 20px;
+    color: gray;
+
+}
+
+#date{
+    margin-left: 4%;
+}
+
+#topic{
+    margin-left: 70%;
+    margin-right: 4%;
+}
+
+#content{
+    width: 90%;
+    margin: auto;
+}
+
+.Interactivity{
+    margin:auto;
+    width: 20%;
+    min-width: 190px;
+    margin-top: 6%;
+    margin-bottom: 6%;
+}
+
+#like{
+    width:10%;
+    min-width: 70px;
+    background: honeydew;
+    border: green solid 2px;
+    border-radius: 20px;
+    margin-right: 50px;
+    height: 60px;
+}
+
+#dislike{
+    width:10%;
+    min-width: 70px;
+    background: honeydew;
+    border: red solid 2px;
+    border-radius: 20px;
+    height: 60px;
+}
+
+#like:hover{
+    background: rgba(0, 128, 0, 0.336);
+}
+
+#dislike:hover{
+    background: rgba(255, 0, 0, 0.336);
+}

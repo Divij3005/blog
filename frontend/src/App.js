@@ -1,13 +1,17 @@
-import './App.css';
-import Header from './Components/Header'
+import {BrowserRouter,Switch,Route} from 'react-router-dom';
+
 import Home from "./Components/Home";
+import BlogDetail from "./Components/BlogDetail"
+
 
 function App() {
   return (
-    <>
-      <Home />
-      <Header  header_ref={["Home","Profile","Stats","Search","Logout"]} clicked={0} />
-    </>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path= "/detail" component={BlogDetail} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
