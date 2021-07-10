@@ -17,7 +17,7 @@ class SeachBar extends Component{
     render(){
         return(
             <div className="search input-group">
-                <input type="text" placeholder="Search .." className="form-control" />
+                <input type="text" placeholder="Search .." className="form-control" id="search-bar" />
                 <i onClick={this.crossButton} class="fa fa-times fa-2x" aria-hidden="true"></i>
             </div>
         );

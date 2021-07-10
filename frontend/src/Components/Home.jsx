@@ -18,7 +18,7 @@ class ComposeButton extends Component{
         }
         return(
             <>
-                {cb}
+                <Link to={"/compose"}>{cb}</Link>
             </>
         );
     }
