@@ -44,6 +44,14 @@
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+#search-bar{
+    border-radius: 13px;
+}
+
+#search-bar:focus{
+    outline: none;
+}
+
 
 a {
     text-decoration: none !important;
