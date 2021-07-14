@@ -41,10 +41,36 @@ class Header extends Component{
         const header_ref = this.props.header_ref;
         const clicked = this.props.clicked;
         let click = this.state.searchClicked;
+        // octa login code here ...
+        const history = this.props.history;
+        const oktaAuth = this.props.oktaAuth;
+        const authState = this.props.authState;
+
+        if (!authState) return null;
+
+        const login = async () => history.push('/login');
+  
+        const logout = async () => oktaAuth.signOut();
+
+        const button = authState.isAuthenticated ? 
+        // eslint-disable-next-line
+        <li onClick={logout}><a>Logout</a></li> :
+        // eslint-disable-next-line
+        <li onClick={login}><a>Login</a></li>;
+
+        // ends here ...
+
+
         header_ref.forEach((link_val) => {
             if(link_val === "Search"){
                 row.push(
-                    <li onClick={this.clickSearch}>{link_val}</li>
+                    // eslint-disable-next-line
+                    <li onClick={this.clickSearch}><a>{link_val}</a></li>
+                );
+            }
+            else if(link_val === "Logout"){
+                row.push(
+                    {button}
                 );
             }
             else if(link_val === header_ref[clicked]){

@@ -1,6 +1,9 @@
 import React, {Component} from "react";
 import Header from './Header';
 import {Link} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import { useOktaAuth } from '@okta/okta-react';
+import {getAllPosts} from '../service/api.js';
 import './styles/Home.css'
 import './styles/font-awesome/css/font-awesome.css'
 
@@ -18,25 +21,53 @@ class ComposeButton extends Component{
         }
         return(
             <>
-                <Link to={"/compose"}>{cb}</Link>
+                <Link to={"/create"}>{cb}</Link>
             </>
         );
     }
 }
 
 class Posts extends Component{
+    constructor(props){
+        super(props);
+        this.fetchData = this.fetchData.bind(this);
+        this.state = {data:[]}
+    }
+
+    async fetchData(){
+        let data = await getAllPosts();
+        this.setState({data:data});
+    }
+
     render(){
+        this.fetchData();
+        let data = this.state.data;
+        let row = [];
+        data.forEach( (x) =>{
+            row.push( <Post postDetails = {x} /> );
+        });
+        return(
+            <>
+                {row}
+            </>
+        );
+    }
+}
+
+class Post extends Component{
+    render(){
+        let post = this.props.postDetails;
         return(
             <div className="post">
-                <h1> Author </h1>
+                <h1> {post.author} </h1>
                 <div className="upper-div">
-                    <p className="date"> date </p>
-                    <p className="topic"> topic </p>
+                    <p className="date"> date : {post.date} </p>
+                    <p className="topic"> topic : {post.topic} </p>
                 </div>
                 <div className="content">
-                    <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum velit laoreet id donec ultrices tincidunt arcu non sodales. Libero justo laoreet sit amet cursus sit amet dictum. Tellus mauris a diam maecenas sed enim ut sem. Fusce id velit ut tortor pretium viverra suspendisse. Urna condimentum mattis pellentesque id nibh tortor id aliquet lectus. Bibendum at varius vel pharetra. Fermentum leo vel orci porta non pulvinar. Vestibulum lorem sed risus ultricies tristique nulla aliquet enim. Blandit massa enim nec dui. Ante in nibh mauris cursus mattis. Amet venenatis urna cursus eget nunc scelerisque viverra. Sagittis vitae et leo duis ut diam quam nulla porttitor. Ac tortor dignissim convallis aenean et tortor at risus. Habitant morbi tristique senectus et netus et malesuada fames. Ultrices vitae auctor eu augue ut lectus. Commodo elit at imperdiet dui accumsan sit amet nulla. Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.</p>
+                    <p> {post.content} </p>
                 </div>
-                <Link to={"/detail"}>
+                <Link to={"/detail/"+post._id}>
                     <button><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
                 </Link>
             </div>
@@ -44,20 +75,18 @@ class Posts extends Component{
     }
 }
 
-class Home extends Component{
-    render(){
-        return(
-            <>
-                <Header  header_ref={["Home","Profile","Stats","Search","Logout"]} clicked={0} />
-                <div className="Box"></div>
-                <ComposeButton />
-                <Posts />
-                <Posts />
-                <Posts />
-                <Posts />
-            </>
+const Home = () =>{
+    const history = useHistory();
+    const { oktaAuth, authState } = useOktaAuth();
+    return(
+        <>
+            <Header  header_ref={["Home","Profile","Stats","Search","Logout"]} clicked={0} history={history} oktaAuth={oktaAuth} authState={authState} />
+            <div className="Box"></div>
+            <ComposeButton />
+            <Posts />
+        </>
         );
-    }
 }
+
 
 export default Home;

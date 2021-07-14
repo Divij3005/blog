@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/pranaybhatia707/blog-app/issues"
   },
-  "homepage": "https://github.com/pranaybhatia707/blog-app#readme"
+  "homepage": "https://github.com/pranaybhatia707/blog-app#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.2"
+  }
 }
