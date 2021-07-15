@@ -1,8 +1,6 @@
 import React, {Component} from "react";
 import Header from './Header';
 import {Link} from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
-import { useOktaAuth } from '@okta/okta-react';
 import {getAllPosts} from '../service/api.js';
 import './styles/Home.css'
 import './styles/font-awesome/css/font-awesome.css'
@@ -76,11 +74,9 @@ class Post extends Component{
 }
 
 const Home = () =>{
-    const history = useHistory();
-    const { oktaAuth, authState } = useOktaAuth();
     return(
         <>
-            <Header  header_ref={["Home","Profile","Stats","Search","Logout"]} clicked={0} history={history} oktaAuth={oktaAuth} authState={authState} />
+            <Header  header_ref={["Home","Profile","Stats","Search","Logout"]} clicked={0}  />
             <div className="Box"></div>
             <ComposeButton />
             <Posts />
