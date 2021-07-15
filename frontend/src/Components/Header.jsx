@@ -24,6 +24,9 @@ class SeachBar extends Component{
     }
 }
 
+
+
+
 class Header extends Component{
     constructor(props){
         super(props);
@@ -41,10 +44,14 @@ class Header extends Component{
         const header_ref = this.props.header_ref;
         const clicked = this.props.clicked;
         let click = this.state.searchClicked;
+        
+
+
         header_ref.forEach((link_val) => {
             if(link_val === "Search"){
                 row.push(
-                    <li onClick={this.clickSearch}>{link_val}</li>
+                    // eslint-disable-next-line
+                    <li onClick={this.clickSearch}><a>{link_val}</a></li>
                 );
             }
             else if(link_val === header_ref[clicked]){
@@ -95,6 +102,7 @@ class Header extends Component{
         );
     }
 }
+
 
 
 export default Header;
