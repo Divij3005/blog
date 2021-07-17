@@ -11,6 +11,7 @@
     position: fixed;
     background: pink;
     width: 15%;
+    min-width: 10%;
     height: 10%;
     border-radius: 40px;
     color: rgb(135, 117, 136);
@@ -61,12 +62,16 @@ button:hover{
 
 .date{
     /* float: left; */
-    margin-left: 2%;
+    margin-left: 5%;
+    font-size: 14px;
+    color: rgba(14, 13, 13, 0.568);
 }
 
 .topic{
     /* float: right; */
-    margin-left: 2%;
+    margin-left: 5%;
+    font-size: 14px;
+    color: rgba(14, 13, 13, 0.568);
 }
 
 .content{

@@ -31,3 +31,14 @@ export const getPost = async (req,res) =>{
     }
 }
 
+
+export const interactivityUpdate = async (req,res) =>{
+    try{
+        await Post.findByIdAndUpdate(req.params.id,{ $set : req.body });
+        res.status(200).json('updated interactivity');
+    }
+    catch(err){
+        res.status(500).json(err);
+    }
+}
+

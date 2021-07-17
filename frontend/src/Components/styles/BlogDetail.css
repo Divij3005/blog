@@ -15,20 +15,20 @@
 #dt{
     display: flex;
     border-bottom: darkgray solid 2px;
-    margin-right: 2%;
-    margin-left: 2%;
-    font-size: 20px;
+    margin-right: 1%;
+    margin-left: 1%;
+    font-size: 18px;
     color: gray;
 
 }
 
 #date{
-    margin-left: 4%;
+    margin-left: 3%;
 }
 
 #topic{
     margin-left: 70%;
-    margin-right: 4%;
+    margin-right: 3%;
 }
 
 #content{
