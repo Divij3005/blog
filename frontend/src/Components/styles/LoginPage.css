@@ -1,0 +1,14 @@
+.LoginContainer{
+    margin-top: 10%; 
+}
+
+.Form{
+    width:50%;
+    background-color: rgba(112, 106, 106, 0.295);
+    padding: 6%;
+    border-radius: 40px;
+}
+
+.Submit{
+    margin-top: 3%;
+}
