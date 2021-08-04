@@ -1,4 +1,3 @@
-![Screenshot 2021-08-03 at 9 46 02 AM](https://user-images.githubusercontent.com/44642485/128120518-aea8046d-bfaa-4115-ade3-df77e86abc35.png)
 # blog-app
 The app works as every other blogging website out there.
     -> Login / signup Page
