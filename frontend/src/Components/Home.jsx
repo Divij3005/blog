@@ -51,10 +51,10 @@ class ComposeButton extends Component{
             transform: 'translate(0px,-'+this.state.y+'px)'
         };
         if (w > 1180){
-            cb = <button className="compose-button" style={styles}><h2> Compose <i class="fa fa-pencil" aria-hidden="true"></i> </h2></button>;
+            cb = <button className="compose-button" style={styles}><h4> Compose <i class="fa fa-pencil" aria-hidden="true"></i> </h4></button>;
         }
         else {
-            cb = <button className="compose-button-compressed" style={styles}><h2> <i class="fa fa-pencil" aria-hidden="true"></i></h2></button>;
+            cb = <button className="compose-button-compressed" style={styles}><h4> <i class="fa fa-pencil" aria-hidden="true"></i></h4></button>;
         }
         return(
             <>
