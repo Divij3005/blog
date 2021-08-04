@@ -44,11 +44,11 @@ class PostForm extends Component{
             topic = "Topic";
         }
         return(
-            <div className="container">
-                <form>
+            <div className="container-auto">
+                <form id="f">
                     <label> 
                         <h3>{topic}</h3>
-                        <input type="text" placeholder="Topic For Blog .." name="topic" onChange={this.handleChange}/>
+                        <input id="inp" type="text" placeholder="Topic For Blog .." name="topic" onChange={this.handleChange}/>
                     </label>
                     <br />
                     <textarea className="blog-content" placeholder="Write Content of Blog here .." name="content" onChange={this.handleChange} rows="20"  cols="60"></textarea>

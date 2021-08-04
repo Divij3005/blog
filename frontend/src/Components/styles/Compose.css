@@ -4,21 +4,27 @@
     height: 200px;  
 }
 
-.container{
+.container-auto{
     margin:auto;
+    margin-bottom: 2%;
+}
+label{
+    width:100%;
 }
 
-form{
-    width:90%;
+#f{
+    width: 90%;
     margin:auto;
+    padding-top: 3%;
 }
 
-form input{
-    width:90%;
+#inp {
+    width: 100%;
     border-radius: 10px;
     border: pink solid 1.5px;
-    height: 30px;
-    padding-left: 2%;
+    height: 35px;
+    padding-left: 1%;
+    margin-top: 1%;
 }
 
 form input:focus{
@@ -29,7 +35,7 @@ form input:focus{
     border:none;
     width: 90%;
     margin-top: 4%;
-    /* height: 70%; */
+    height: 270px;
 }
 
 textarea.blog-content:focus {
@@ -44,7 +50,7 @@ textarea.blog-content:focus {
     border: pink solid 2px;
     color: purple;
     font-size: 16px;
-    margin-left:38%;
+    margin-left:46%;
 }
 
 #button:hover{
