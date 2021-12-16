@@ -1,6 +1,6 @@
 import express from 'express';
 import {creatingPost,getAllPosts,getPost,interactivityUpdate} from '../controller/post-controller.js';
-// import {addUser} from '..controller/user-controller.js';
+import {addUser} from '../controller/user-controller.js';
 
 const router = express.Router();
 
@@ -12,6 +12,6 @@ router.get('/post/:id',getPost);
 
 router.post('/user-interactivity/:id',interactivityUpdate);
 
-// router.post('/add-user',addUser);
+router.post('/auth/login',addUser);
 
 export default router;

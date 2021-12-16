@@ -1,32 +1,32 @@
-// import mongoose from 'mongoose';
+import mongoose from 'mongoose';
 // import passportLocalMongoose from 'passport-local-mongoose';
 
 
 
-// const UserSchema = mongoose.Schema({
-//     email:{
-//         type:String,
-//         required:true
-//     },
-//     name:{
-//         type:String,
-//         required:true
-//     },
-//     password:{
-//         type:String,
-//         required:true
-//     },
-//     posts:{
-//         type:mongoose.Schema.Types.ObjectId,
-//         ref:"posts"
-//     }
-// });
+const UserSchema = mongoose.Schema({
+    username: String,
+    socialId: String,
+    sex: String,
+    age: Number,
+});
 
 
 // UserSchema.plugin(passportLocalMongoose);
 
 
 // // mongodb atlas appends s at end of the cluster name ...
-// const user = mongoose.model('user',UserSchema);
+const user = mongoose.model('user',UserSchema);
 
-// export default user;
+export default user;
+
+// const mongoose = require("mongoose");
+// const Schema = mongoose.Schema;
+
+// const userSchema = new Schema({
+//     username: String,
+//     socialId: String,
+// });
+
+// const User = mongoose.model("user", userSchema);
+
+// module.exports = User;

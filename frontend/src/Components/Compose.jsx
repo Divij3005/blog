@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {useHistory} from 'react-router-dom';
+// import {useHistory} from 'react-router-dom';
 import Header from './Header';
 import './styles/Compose.css'
 import './styles/font-awesome/css/font-awesome.css'
@@ -11,15 +11,29 @@ class PostForm extends Component{
     constructor(props){
         super(props);
         this.state = {
-            author:'Pranay Bhatia',
+            author:'',
             topic: "",
             date: new Date(),
             content: "",
             like: '0',
-            dislike: '0'
+            dislike: '0',
+            isLoggedIn : false,
+            sex : '',
+            age : 19,
         };
         this.handleChange = this.handleChange.bind(this);
         this.savePost = this.savePost.bind(this);
+    }
+
+    componentDidMount() {
+        if (sessionStorage.getItem("isLoggedIn") === "true") {
+            this.setState({
+                author: sessionStorage.getItem("username"),
+                sex : sessionStorage.getItem("sex"),
+                age: sessionStorage.getItem("age"),
+                isLoggedIn: true,
+            });
+        }
     }
 
     handleChange(e){
@@ -35,7 +49,8 @@ class PostForm extends Component{
         this.setState({date:new Date()});
         const post = this.state;
         await createPost(post);
-        this.props.history.push('/');
+        // this.props.history.push('/');
+        window.location = '/';
     }
 
     render(){
@@ -67,9 +82,9 @@ class PostForm extends Component{
 function Compose(){
     return(
         <>
-            <Header header_ref={["Home","Profile","Stats","Logout"]} clicked={-1} />
+            <Header header_ref={["Home","Stats","Logout"]} clicked={-1} />
             <div className="Box"></div>
-            <PostForm history={useHistory()} />
+            <PostForm  />
         </>
     );
 }

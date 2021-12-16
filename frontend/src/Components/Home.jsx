@@ -69,7 +69,7 @@ class ComposeButton extends Component{
 const Home = () =>{
     return(
         <>
-            <Header  header_ref={["Home","Profile","Stats","Search","Logout"]} clicked={0}  />
+            <Header  header_ref={["Home","Stats","Search","Logout"]} clicked={0}  />
             <div className="Box"></div>
             <ComposeButton />
             <Posts />

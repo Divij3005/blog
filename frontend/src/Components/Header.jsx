@@ -48,7 +48,35 @@ class Header extends Component{
 
 
         header_ref.forEach((link_val) => {
-            if(link_val === "Search"){
+            if(link_val === "Logout"){
+                row.push(
+                    // eslint-disable-next-line
+                    <Link  onClick={() => {
+                        window.sessionStorage.removeItem(
+                            "isLoggedIn"
+                        );
+                        window.sessionStorage.removeItem(
+                            "username"
+                        );
+                        window.location = "/";
+                    }} > <li><a>{link_val}</a></li></Link>
+                );
+            }
+            else if(link_val === "Home"){
+                if(link_val === header_ref[clicked]){
+                    row.push(
+                        // eslint-disable-next-line
+                        <Link to={"/"}><li><a className="active">{link_val}</a></li></Link>
+                    );
+                }
+                else{
+                    row.push(
+                        // eslint-disable-next-line
+                        <Link to={"/"}><li><a>{link_val}</a></li></Link>
+                    );
+                }
+            }
+            else if(link_val === "Search"){
                 row.push(
                     // eslint-disable-next-line
                     <li onClick={this.clickSearch}><a>{link_val}</a></li>
@@ -57,13 +85,13 @@ class Header extends Component{
             else if(link_val === header_ref[clicked]){
                 row.push(
                     // eslint-disable-next-line
-                    <Link to={"/"}><li><a className="active">{link_val}</a></li></Link>
+                    <Link to={"/"+link_val}><li><a className="active">{link_val}</a></li></Link>
                 );
             }
             else
                 row.push(
                     // eslint-disable-next-line
-                    <Link to={"/"}><li><a>{link_val}</a></li></Link>
+                    <Link to={"/"+link_val}><li><a>{link_val}</a></li></Link>
                 );
         });
         let navVal;
