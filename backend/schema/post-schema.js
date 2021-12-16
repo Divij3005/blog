@@ -21,8 +21,13 @@ const PostSchema = mongoose.Schema({
     },
     dislike:{
         type:Number
-    }
-
+    },
+    sex:{
+        type:String
+    },
+    age:{
+        type:Number
+    },
 });
 
 // mongodb atlas appends s at end of the cluster name ...

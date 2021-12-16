@@ -79,7 +79,7 @@ class BlogDetail extends Component{
         this.fetchData();
         return(
             <>
-                <Header  header_ref={["Home","Profile","Stats","Logout"]} clicked={-1} />
+                <Header  header_ref={["Home","Stats","Logout"]} clicked={-1} />
                 <div className="Box"></div>
                 <div className="container">
                     <h1 id="auth"> {this.state.data.author} </h1>

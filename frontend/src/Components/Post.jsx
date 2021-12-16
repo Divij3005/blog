@@ -39,7 +39,7 @@ function displayDate(dateOfCreation){
     const currentDate = new Date();
     var secs = (currentDate - dateOfCreation)/1000;
     if (secs < 60){
-        return  secs + " sec ago";
+        return  Math.floor(secs/1) + " sec ago";
     }
     if(secs < 3600){
         return Math.floor(secs/60) + " min ago";

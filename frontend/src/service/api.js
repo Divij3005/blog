@@ -41,12 +41,14 @@ export const interactivityUpdate = async (id,post) =>{
 }
 
 
-export const getStats = async () =>{
+export const getStats = async (topic) =>{
     try{
-        let res = await axios.get('http://127.0.0.1:5000/read');
+        let res = await axios.get('http://127.0.0.1:5000/read/'+topic);
         return res.data;
     }
     catch(err){
         console.log('Error while calling python API',err);
     }
 }
+
+export const 
