@@ -50,5 +50,3 @@ export const getStats = async (topic) =>{
         console.log('Error while calling python API',err);
     }
 }
-
-export const 
